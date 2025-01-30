@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Card</title>
     <link rel="stylesheet" href="index.css">
-   <script src="index.js"></script>
+   
 </head>
 <body>
     <div class="profile-card">
@@ -13,8 +13,8 @@
         <h2 data-testid="fullName">Oghenekaro Emieje </h2>
         <p data-testid="jobTitle">Frontend Developer</p>
         <p data-testid="shortBio"> I'm Oghenekaro Emieje a passionate frontend developer crafting engaging and user-friendly web experiences. Proficient in HTML, CSS, and JavaScript with small knowledge of Typescript, with experience in modern frameworks like React.  Dedicated to clean code, responsive design, and pixel-perfect implementation.  Always eager to learn and explore new technologies.</p>
-        <p data-testid="currentLocation">Emede Delta State Nigeria</p>
-        <p data-testid="emailAddress">emiejeoghenekaro@gmail.com</p>
+        <p data-testid="currentLocation"><span>Location:</span>Emede Delta State Nigeria</p>
+        <p data-testid="emailAddress">Email:emiejeoghenekaro@gmail.com</p>
         <div class="social-links" data-testid="socialLinks">
             <a href="https://www.linkedin.com/in/emieje-o-36530784/">LinkedIn</a>
             <a href="https://github.com/pironoid14">GitHub</a>
@@ -22,6 +22,15 @@
         </div>
         <p id="utcTime" data-testid="currentTimeUTC"></p>
     </div>
+    <script>
+    function updateUTCTime() {
+        const currentTimeUTC = document.querySelector('[data-testid="currentTimeUTC"]');
+        const now = new Date();
+        currentTimeUTC.textContent = now.toUTCString();
+    }
+    
+    updateUTCTime();
+    </script>
     
 </body>
 </html>
